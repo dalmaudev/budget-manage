@@ -1,0 +1,100 @@
+{
+  "worker": [
+    {
+      "id": "1",
+      "name": "Cristian",
+      "surname": "Cotes",
+      "job": "CTO",
+      "contractDate": "01-10-2024",
+      "totalBudget": 1000,
+      "currentState": "Active",
+      "budgetSpent": 250,
+      "budgetLeft": 750
+    },
+    {
+      "id": "2",
+      "name": "luca",
+      "surname": "aosikdjsa ",
+      "job": " Jr Developer",
+      "contractDate": "01-10-2024",
+      "totalBudget": 1000,
+      "currentState": "Active",
+      "budgetSpent": 300,
+      "budgetLeft": 700
+    },
+    {
+      "id": "3",
+      "name": "pepe",
+      "surname": "marismas",
+      "job": " Jr Developer",
+      "contractDate": "01-10-2024",
+      "totalBudget": 1000,
+      "currentState": "Active",
+      "budgetSpent": 322,
+      "budgetLeft": 678
+    },
+    {
+      "id": "4",
+      "name": "Jordi",
+      "surname": "Dalmau",
+      "job": " Jr Developer",
+      "contractDate": "01-10-2024",
+      "totalBudget": 1000,
+      "currentState": "Inactive",
+      "budgetSpent": 0,
+      "budgetLeft": 0
+    }
+  ],
+  "training": [
+    {
+      "id": "f9b0",
+      "workerId": "2",
+      "name": "Angular pro",
+      "provider": "Udemy",
+      "cost": 100,
+      "desc": "asd sad asd",
+      "startDate": "2024-07-29",
+      "finalDate": "2024-07-29"
+    },
+    {
+      "id": "7bf8",
+      "workerId": "2",
+      "name": "CSS Nuub",
+      "provider": "Pepito Web",
+      "cost": 100,
+      "desc": "asd sad asdcss",
+      "startDate": "2024-08-05",
+      "finalDate": "2024-08-11"
+    },
+    {
+      "id": "759f",
+      "workerId": "2",
+      "name": "Angular pro 3",
+      "provider": "Udemy",
+      "cost": 100,
+      "desc": "asd asd asd",
+      "startDate": "2024-08-04",
+      "finalDate": "2024-08-11"
+    },
+    {
+      "id": "c5ce",
+      "workerId": "3",
+      "name": "Angular pro",
+      "provider": "Udemy",
+      "cost": 322,
+      "desc": "asds ad asd asd",
+      "startDate": "2024-07-28",
+      "finalDate": "2024-07-29"
+    },
+    {
+      "id": "3602",
+      "workerId": "1",
+      "name": "Best Team Buildings in the world",
+      "provider": "Pepito Web",
+      "cost": 250,
+      "desc": "Best Team Buildings in the world",
+      "startDate": "2024-07-30",
+      "finalDate": "2024-07-30"
+    }
+  ]
+}

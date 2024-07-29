@@ -1,0 +1,70 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<dialog open>
+  <h1>Add New Training for {{ worker!.name }}</h1>
+  <p>Create a new training record</p>
+  <form>
+    <p>
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        [(ngModel)]="enteredName"
+      />
+    </p>
+    <p>
+      <label for="provider">Provider</label>
+      <input
+        [(ngModel)]="enteredProvider"
+        type="text"
+        id="provider"
+        name="provider"
+        required
+      />
+    </p>
+    <p>
+      <label for="cost">Training Price</label>
+      <input
+        type="number"
+        id="cost"
+        name="cost"
+        required
+        [(ngModel)]="enteredTrainingPrice"
+      />
+    </p>
+    <p>
+      <label for="name">Description</label>
+      <textarea
+        [(ngModel)]="enteredTrainingDescription"
+        name="description"
+        id="description"
+        cols="30"
+        rows="5"
+      ></textarea>
+    </p>
+    <p>
+      <label for="date">Training Start Date</label>
+      <input
+        [(ngModel)]="enteredStartDate"
+        name="startDate"
+        id="startDate"
+        type="date"
+      />
+    </p>
+    <p>
+      <label for="date">Training End Date</label>
+      <input
+        [(ngModel)]="enteredEndDate"
+        name="endDate"
+        id="endDate"
+        type="date"
+      />
+    </p>
+
+    <p class="actions">
+      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="submit" (click)="onAddNewTraining()">Save</button>
+    </p>
+  </form>
+</dialog>
