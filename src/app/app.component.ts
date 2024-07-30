@@ -1,6 +1,6 @@
 import { NgClass, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Worker } from '../models/worker.model';
 import { AddTrainingComponent } from './add-training/add-training.component';
 import { WorkerService } from './services/worker.service';
@@ -10,6 +10,7 @@ import { TrainingProfileComponent } from './training-profile/training-profile.co
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterLink,
     RouterOutlet,
     UpperCasePipe,
     AddTrainingComponent,

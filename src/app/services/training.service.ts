@@ -24,7 +24,7 @@ export class TrainingService {
 
   postNewTraining(newTraining: Training): Observable<Training> {
     return this.http.post<Training>(this.SERVICE_URL, newTraining, {
-      headers: new HttpHeaders({ 'Content-Type': 'aplication/json' }),
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     });
   }
 }

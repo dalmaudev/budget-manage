@@ -1,11 +1,17 @@
 <div class="backdrop" (click)="onCancel()"></div>
 <dialog open>
-  <h1>Add New Training for {{ worker!.name }}</h1>
-  <p>Create a new training record</p>
+  <div class="headline">
+    <h1>
+      Add New Training for
+      <strong>{{ worker!.name }} {{ worker!.surname }}</strong>
+    </h1>
+    <p>Create a new training record</p>
+  </div>
   <form>
     <p>
       <label for="name">Name</label>
       <input
+        required
         type="text"
         id="name"
         name="name"
@@ -26,6 +32,7 @@
     <p>
       <label for="cost">Training Price</label>
       <input
+        required
         type="number"
         id="cost"
         name="cost"
@@ -36,6 +43,7 @@
     <p>
       <label for="name">Description</label>
       <textarea
+        required
         [(ngModel)]="enteredTrainingDescription"
         name="description"
         id="description"
@@ -46,6 +54,7 @@
     <p>
       <label for="date">Training Start Date</label>
       <input
+        required
         [(ngModel)]="enteredStartDate"
         name="startDate"
         id="startDate"
@@ -55,6 +64,7 @@
     <p>
       <label for="date">Training End Date</label>
       <input
+        required
         [(ngModel)]="enteredEndDate"
         name="endDate"
         id="endDate"

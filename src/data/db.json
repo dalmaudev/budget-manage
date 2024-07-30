@@ -13,8 +13,8 @@
     },
     {
       "id": "2",
-      "name": "luca",
-      "surname": "aosikdjsa ",
+      "name": "Luca",
+      "surname": "Abdollahi",
       "job": " Jr Developer",
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
@@ -24,14 +24,14 @@
     },
     {
       "id": "3",
-      "name": "pepe",
-      "surname": "marismas",
+      "name": "Pepe",
+      "surname": "Marismas",
       "job": " Jr Developer",
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 322,
-      "budgetLeft": 678
+      "budgetSpent": 100,
+      "budgetLeft": 900
     },
     {
       "id": "4",
@@ -41,8 +41,8 @@
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
       "currentState": "Inactive",
-      "budgetSpent": 0,
-      "budgetLeft": 0
+      "budgetSpent": 500,
+      "budgetLeft": 500
     }
   ],
   "training": [
@@ -95,6 +95,26 @@
       "desc": "Best Team Buildings in the world",
       "startDate": "2024-07-30",
       "finalDate": "2024-07-30"
+    },
+    {
+      "id": "2ec5",
+      "workerId": "3",
+      "name": "Angular pro",
+      "provider": "Udemy",
+      "cost": 100,
+      "desc": "asd ad adas dasd",
+      "startDate": "2024-07-30",
+      "finalDate": "2024-08-06"
+    },
+    {
+      "id": "1546",
+      "workerId": "4",
+      "name": "Angular pro",
+      "provider": "Udemy",
+      "cost": 500,
+      "desc": "dasdad as",
+      "startDate": "2024-07-04",
+      "finalDate": "2024-08-08"
     }
   ]
 }

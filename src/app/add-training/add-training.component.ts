@@ -28,11 +28,11 @@ export class AddTrainingComponent {
     private workerService: WorkerService
   ) {}
 
-  onCancel() {
+  onCancel(): void {
     this.cancel.emit();
   }
 
-  onAddNewTraining() {
+  onAddNewTraining(): void {
     const newTraining = {
       // id: 'string', se genera automaticamente
       workerId: this.worker!.id, // ojo number o string
@@ -63,7 +63,7 @@ export class AddTrainingComponent {
     );
   }
 
-  private calculateBudgetSpent() {
+  private calculateBudgetSpent(): void {
     if (this.worker.budgetSpent && this.worker.budgetSpent > 0) {
       this.worker.budgetSpent =
         this.worker.budgetSpent + this.enteredTrainingPrice;
@@ -72,7 +72,7 @@ export class AddTrainingComponent {
       console.log(this.worker.budgetSpent);
     }
   }
-  private calculateBudgetLeft() {
+  private calculateBudgetLeft(): void {
     if (this.worker.budgetLeft && this.worker.budgetLeft > 0) {
       this.worker.budgetLeft =
         this.worker.budgetLeft - this.enteredTrainingPrice;

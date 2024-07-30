@@ -120,7 +120,13 @@
               height="32"
             />
           </a>
-          <a href="#" (click)="onJoinTrainingById(worker)">
+          <a
+            [routerLink]="[
+              '/training-profile',
+              worker.name + '-' + worker.surname
+            ]"
+            (click)="onJoinTrainingById(worker)"
+          >
             <img
               src="assets/img/edit-profile.svg"
               alt="Edit Profile"

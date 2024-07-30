@@ -18,9 +18,9 @@ export class WorkerService {
     return this.http.get<Worker[]>(this.SERVICE_URL);
   }
 
-  updateWorker(id: any, newData: any) {
-    return this.http.put(this.SERVICE_URL + `/${id}`, newData, {
-      headers: new HttpHeaders({ 'Content-Type': 'aplication/json' }),
+  updateWorker(id: any, newData: any): Observable<Worker[]> {
+    return this.http.put<Worker[]>(this.SERVICE_URL + `/${id}`, newData, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     });
   }
 }
