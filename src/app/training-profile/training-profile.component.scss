@@ -34,7 +34,8 @@ input[type="file"] {
 }
 
 .breadcrumb {
-  padding: 20px;
+  padding-top: 20px;
+  font-size: 17px;
 }
 
 .custom-file-upload {
@@ -74,7 +75,9 @@ input[type="file"] {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
+  align-items: flex-start;
 }
+
 .employee-detail-data-avatar,
 .employee-detail-data-budget {
   flex: 1 1 50%;
@@ -85,6 +88,17 @@ input[type="file"] {
   flex-direction: column;
 }
 
+.employee-detail-data-avatar img {
+  border-radius: 50%;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.0784313725);
+}
+
+.employee-detail-data-budget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .employee-detail-form {
   margin-top: 40px;
   width: 60%;
@@ -92,7 +106,7 @@ input[type="file"] {
 
 .training-profile-container {
   max-width: fit-content;
-  margin: 40px auto;
+  margin: 30px auto;
 }
 
 .training-profile-header {
@@ -203,11 +217,11 @@ tbody tr:hover {
 tbody td {
   vertical-align: middle;
   padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
 }
 
 tbody td:last-child {
   text-align: center;
+  border-bottom: none;
 }
 
 .form-container {
@@ -235,4 +249,52 @@ tbody td:last-child {
   dialog {
     padding: 2rem;
   }
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenedor */
+  gap: 40px; /* Espacio entre los círculos */
+  /* Opcional, para un poco de espacio superior */
+}
+
+.circle-wrapper {
+  display: flex;
+  flex-direction: column; /* Coloca el círculo y la etiqueta en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 108px; /* Ajusta el tamaño del círculo */
+  height: 108px; /* Ajusta el tamaño del círculo */
+  border-radius: 50%;
+  border: 10px solid rgba(0, 0, 0, 0.089);
+  background-color: #adaf4c; /* Ajusta el color de fondo */
+  color: white; /* Ajusta el color del texto */
+  font-size: 28px; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Opcional, para hacer el texto en negrita */
+  box-shadow: 0px 4px #00000014;
+}
+
+.circle-ambar {
+  background: #d7db31;
+}
+
+.circle-green {
+  background: #63af4c;
+}
+
+.circle-text {
+  text-align: center;
+  text-shadow: 1px 2px #00000036;
+}
+
+.label {
+  margin-top: 20px; /* Espacio entre el círculo y la etiqueta */
+  font-size: 18px; /* Ajusta el tamaño del texto de la etiqueta */
+  color: #000000; /* Ajusta el color del texto de la etiqueta */
+  font-weight: 600;
 }

@@ -138,6 +138,10 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background: #efefef4d;
+}
+
 a {
   text-decoration: none;
 }
@@ -152,4 +156,7 @@ h2 {
 
 h3 {
   font-size: 18px;
+}
+tr {
+  border-bottom: 1px solid #3d3d3d2a;
 }

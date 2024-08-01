@@ -15,18 +15,18 @@
       "id": "2",
       "name": "Luca",
       "surname": "Abdollahi",
-      "job": " Jr Developer",
+      "job": " Sr Developer",
       "contractDate": "30-10-2023",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 0,
-      "budgetLeft": 1000
+      "budgetSpent": 430,
+      "budgetLeft": 570
     },
     {
       "id": "3",
-      "name": "Pepe",
-      "surname": "Marismas",
-      "job": " Jr Developer",
+      "name": "Daniel",
+      "surname": "Peiro",
+      "job": " Sr Developer",
       "contractDate": "20-07-2021",
       "totalBudget": 1000,
       "currentState": "Active",
@@ -35,42 +35,86 @@
     },
     {
       "id": "4",
+      "name": "Danitza",
+      "surname": "Oduber",
+      "job": " RRHH",
+      "contractDate": "31-10-2019",
+      "totalBudget": 1000,
+      "currentState": "Active",
+      "budgetSpent": 0,
+      "budgetLeft": 1000
+    },
+    {
+      "id": "5",
       "name": "Jordi",
       "surname": "Dalmau",
       "job": " Jr Developer",
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
       "currentState": "Inactive",
-      "budgetSpent": 900,
-      "budgetLeft": 100
+      "budgetSpent": 0,
+      "budgetLeft": 1000
+    },
+    {
+      "id": "6",
+      "name": "Luis",
+      "surname": "Romero",
+      "job": " Sr Developer",
+      "contractDate": "05-04-2020",
+      "totalBudget": 1000,
+      "currentState": "Inactive",
+      "budgetSpent": 0,
+      "budgetLeft": 1000
+    },
+    {
+      "id": "7",
+      "name": "Esther",
+      "surname": "Lopez",
+      "job": "UI/UX",
+      "contractDate": "31-01-2021",
+      "totalBudget": 1000,
+      "currentState": "Inactive",
+      "budgetSpent": 0,
+      "budgetLeft": 1000
+    },
+    {
+      "id": "8",
+      "name": "Santi",
+      "surname": "Gil",
+      "job": " Mid Developer",
+      "contractDate": "01-01-2022",
+      "totalBudget": 1000,
+      "currentState": "Active",
+      "budgetSpent": 0,
+      "budgetLeft": 1000
     }
   ],
   "training": [
     {
-      "id": "c808",
-      "workerId": "4",
+      "id": "9308",
+      "workerId": "2",
       "name": "Angular pro",
       "provider": "Codely",
-      "price": 300,
-      "desc": "asda das dasd sa das d",
-      "startDate": "2024-08-08",
-      "endDate": "2024-08-15",
+      "price": 230,
+      "desc": "The Angular Pro course is a comprehensive training program designed to help developers master the Angular framework.",
+      "startDate": "2024-08-01",
+      "endDate": "2024-08-01",
       "type": "Online",
       "category": "Front End",
-      "purchaseDate": "2024-09-05"
+      "purchaseDate": "2024-08-01"
     },
     {
-      "id": "7122",
-      "workerId": "4",
-      "name": "pepe marismeño",
-      "provider": "Code.lo",
-      "price": 600,
-      "desc": "asdsada d",
-      "startDate": "2024-08-15",
-      "endDate": "2024-08-10",
+      "id": "d392",
+      "workerId": "2",
+      "name": "Sass",
+      "provider": "Udemy",
+      "price": 200,
+      "desc": "Amante de los cursos de udemy y sobre todo front end",
+      "startDate": "2024-08-01",
+      "endDate": "2024-08-01",
       "type": "Online",
-      "category": "Soft Skills",
-      "purchaseDate": "2024-08-29"
+      "category": "Back End",
+      "purchaseDate": "2024-08-01"
     }
   ]
 }

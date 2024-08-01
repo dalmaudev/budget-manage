@@ -6,7 +6,8 @@
 <div class="employee-detail">
   @if (worker) {
   <div class="breadcrumb">
-    Home > {{ worker.name }} {{ worker.surname }} > Detailed View
+    <a [routerLink]="'/'">Home</a> > {{ worker.name }} {{ worker.surname }} >
+    Detailed View
   </div>
   <div class="employee-detail-container">
     <div class="employee-detail-row">
@@ -25,16 +26,20 @@
             </label>
           </div>
           <div class="employee-detail-data-budget">
-            <p>
-              {{ worker.budgetSpent }}
-              <br />
-              Used budget
-            </p>
-            <p>
-              {{ worker.budgetLeft }}
-              <br />
-              Remaining budget
-            </p>
+            <div class="circle-container">
+              <div class="circle-wrapper">
+                <div class="circle circle-ambar">
+                  <span class="circle-text">{{ worker.budgetSpent }}€</span>
+                </div>
+                <p class="label">Used Budget</p>
+              </div>
+              <div class="circle-wrapper">
+                <div class="circle circle-green">
+                  <span class="circle-text">{{ worker.budgetLeft }}€</span>
+                </div>
+                <p class="label">Remaining Budget</p>
+              </div>
+            </div>
           </div>
           <div class="employee-detail-form">
             <div class="form-container"></div>
@@ -165,6 +170,6 @@
         </tbody>
       </table>
     </div>
-    <button>Delete Selected</button>
   </div>
 </div>
+<router-outlet />

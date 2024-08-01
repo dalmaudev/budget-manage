@@ -18,12 +18,13 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 35px;
+  font-weight: 600;
 }
 
 p {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .controls {
@@ -95,11 +96,11 @@ tbody tr:hover {
 tbody td {
   vertical-align: middle;
   padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
 }
 
 tbody td:last-child {
   text-align: center;
+  border-bottom: none;
 }
 
 .icon {
