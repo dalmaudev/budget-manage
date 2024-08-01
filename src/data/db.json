@@ -5,33 +5,33 @@
       "name": "Cristian",
       "surname": "Cotes",
       "job": "CTO",
-      "contractDate": "01-10-2024",
+      "contractDate": "07-01-2020",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 250,
-      "budgetLeft": 750
+      "budgetSpent": 0,
+      "budgetLeft": 1000
     },
     {
       "id": "2",
       "name": "Luca",
       "surname": "Abdollahi",
       "job": " Jr Developer",
-      "contractDate": "01-10-2024",
+      "contractDate": "30-10-2023",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 300,
-      "budgetLeft": 700
+      "budgetSpent": 0,
+      "budgetLeft": 1000
     },
     {
       "id": "3",
       "name": "Pepe",
       "surname": "Marismas",
       "job": " Jr Developer",
-      "contractDate": "01-10-2024",
+      "contractDate": "20-07-2021",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 100,
-      "budgetLeft": 900
+      "budgetSpent": 0,
+      "budgetLeft": 1000
     },
     {
       "id": "4",
@@ -41,80 +41,36 @@
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
       "currentState": "Inactive",
-      "budgetSpent": 500,
-      "budgetLeft": 500
+      "budgetSpent": 900,
+      "budgetLeft": 100
     }
   ],
   "training": [
     {
-      "id": "f9b0",
-      "workerId": "2",
-      "name": "Angular pro",
-      "provider": "Udemy",
-      "cost": 100,
-      "desc": "asd sad asd",
-      "startDate": "2024-07-29",
-      "finalDate": "2024-07-29"
-    },
-    {
-      "id": "7bf8",
-      "workerId": "2",
-      "name": "CSS Nuub",
-      "provider": "Pepito Web",
-      "cost": 100,
-      "desc": "asd sad asdcss",
-      "startDate": "2024-08-05",
-      "finalDate": "2024-08-11"
-    },
-    {
-      "id": "759f",
-      "workerId": "2",
-      "name": "Angular pro 3",
-      "provider": "Udemy",
-      "cost": 100,
-      "desc": "asd asd asd",
-      "startDate": "2024-08-04",
-      "finalDate": "2024-08-11"
-    },
-    {
-      "id": "c5ce",
-      "workerId": "3",
-      "name": "Angular pro",
-      "provider": "Udemy",
-      "cost": 322,
-      "desc": "asds ad asd asd",
-      "startDate": "2024-07-28",
-      "finalDate": "2024-07-29"
-    },
-    {
-      "id": "3602",
-      "workerId": "1",
-      "name": "Best Team Buildings in the world",
-      "provider": "Pepito Web",
-      "cost": 250,
-      "desc": "Best Team Buildings in the world",
-      "startDate": "2024-07-30",
-      "finalDate": "2024-07-30"
-    },
-    {
-      "id": "2ec5",
-      "workerId": "3",
-      "name": "Angular pro",
-      "provider": "Udemy",
-      "cost": 100,
-      "desc": "asd ad adas dasd",
-      "startDate": "2024-07-30",
-      "finalDate": "2024-08-06"
-    },
-    {
-      "id": "1546",
+      "id": "c808",
       "workerId": "4",
       "name": "Angular pro",
-      "provider": "Udemy",
-      "cost": 500,
-      "desc": "dasdad as",
-      "startDate": "2024-07-04",
-      "finalDate": "2024-08-08"
+      "provider": "Codely",
+      "price": 300,
+      "desc": "asda das dasd sa das d",
+      "startDate": "2024-08-08",
+      "endDate": "2024-08-15",
+      "type": "Online",
+      "category": "Front End",
+      "purchaseDate": "2024-09-05"
+    },
+    {
+      "id": "7122",
+      "workerId": "4",
+      "name": "pepe marismeño",
+      "provider": "Code.lo",
+      "price": 600,
+      "desc": "asdsada d",
+      "startDate": "2024-08-15",
+      "endDate": "2024-08-10",
+      "type": "Online",
+      "category": "Soft Skills",
+      "purchaseDate": "2024-08-29"
     }
   ]
 }

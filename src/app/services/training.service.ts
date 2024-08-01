@@ -27,4 +27,14 @@ export class TrainingService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     });
   }
+
+  updateTraining(id: string, updatedTraining: Training): Observable<Training> {
+    return this.http.put<Training>(
+      this.SERVICE_URL + `/${id}`,
+      updatedTraining,
+      {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      }
+    );
+  }
 }

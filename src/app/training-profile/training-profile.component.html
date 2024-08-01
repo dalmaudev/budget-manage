@@ -1,56 +1,170 @@
-<div class="backdrop" (click)="onCancel()"></div>
-<dialog open>
-  <div class="content">
-    <h2>Training Profile of {{ worker!.name }} {{ worker!.surname }}</h2>
+@if (selectedTraining) {
 
-    <div class="controls">
-      <select id="filter">
-        <option value="all">Filter</option>
-      </select>
-      <input type="text" id="search" placeholder="Search..." />
+<app-edit-training [training]="selectedTraining" (close)="closeEditModal()" />
+}
+
+<div class="employee-detail">
+  @if (worker) {
+  <div class="breadcrumb">
+    Home > {{ worker.name }} {{ worker.surname }} > Detailed View
+  </div>
+  <div class="employee-detail-container">
+    <div class="employee-detail-row">
+      <div class="employee-detail-information">
+        <div class="employee-detail-data">
+          <div class="employee-detail-data-avatar">
+            <img
+              src="https://www.w3schools.com/howto/img_avatar2.png"
+              alt=""
+              height="128"
+              width="128"
+            />
+            <label class="custom-file-upload">
+              <input type="file" id="" />
+              Choose file
+            </label>
+          </div>
+          <div class="employee-detail-data-budget">
+            <p>
+              {{ worker.budgetSpent }}
+              <br />
+              Used budget
+            </p>
+            <p>
+              {{ worker.budgetLeft }}
+              <br />
+              Remaining budget
+            </p>
+          </div>
+          <div class="employee-detail-form">
+            <div class="form-container"></div>
+            <form>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input
+                  readonly
+                  type="text"
+                  id="name"
+                  name="name"
+                  [value]="worker.name + ' ' + worker.surname"
+                />
+              </div>
+              <div class="form-group">
+                <label for="position">Position:</label>
+                <input
+                  readonly
+                  type="text"
+                  id="position"
+                  name="position"
+                  [value]="worker.job"
+                />
+              </div>
+              <div class="form-group">
+                <label for="hiring-date">Hiring date:</label>
+                <input
+                  readonly
+                  type="text"
+                  id="hiring-date"
+                  name="hiring-date"
+                  [value]="worker.contractDate"
+                />
+              </div>
+              <div class="form-group">
+                <label for="budget-renewal">Budget renewal:</label>
+                <input
+                  readonly
+                  type="number"
+                  id="budget-renewal"
+                  name="budget-renewal"
+                />
+              </div>
+              <div class="form-group">
+                <label for="status">Status:</label>
+                <input
+                  readonly
+                  type="text"
+                  id="status"
+                  name="status"
+                  [value]="worker.currentState"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th><input type="checkbox" name="" id="" /></th>
-          <th>Training Name</th>
-          <th>Progress</th>
-          <th>Training Price</th>
-          <th>Provider</th>
-          <th>Purchase Date</th>
-          <th>Category</th>
-          <th>Type of Training</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (training of trainingDataById; track training.id) {
-        <tr>
-          <td><input type="checkbox" name="" id="" /></td>
+  }
+  <div class="training-profile-container">
+    <div class="training-profile-header">
+      @if (worker) {
+      <div>
+        <h2>
+          Training Profile of
+          <strong>{{ worker.name }} {{ worker.surname }}</strong>
+        </h2>
+      </div>
+      }
 
-          <td>{{ training.name }}</td>
-          <td>Progress</td>
-          <td>{{ training.cost }}€</td>
-          <td>{{ training.provider }}</td>
-          <td>{{ training.startDate }}</td>
-          <td>Category</td>
-          <td>Type of Training</td>
+      <div class="controls">
+        <select id="filter">
+          <option value="all">Filter</option>
+        </select>
+        <div class="delete-search">
+          <img
+            src="assets/img/delete-icon.svg"
+            alt=""
+            width="32"
+            height="32"
+          /><input type="text" id="search" placeholder="Search..." />
+        </div>
+      </div>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>Training Name</th>
+            <th>Progress</th>
+            <th>Training Price</th>
+            <th>Provider</th>
+            <th>Purchase Date</th>
+            <th>Category</th>
+            <th>Type of Training</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (training of trainingDataById; track training.id) {
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
 
-          <td class="table-actions">
-            <a href="#">
-              <img
-                src="assets/img/edit-profile.svg"
-                alt="Edit Profile"
-                width="32"
-                height="32"
-              />
-            </a>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
+            <td>{{ training.name }}</td>
+            <td>Progress</td>
+            <td>{{ training.price }}€</td>
+            <td>{{ training.provider }}</td>
+            <td>{{ training.startDate }}</td>
+            <td>{{ training.category }}</td>
+            <td>{{ training.type }}</td>
+
+            <td class="table-actions">
+              <a (click)="editTraining(training)">
+                <img
+                  src="assets/img/edit-icon.svg"
+                  alt="Edit Profile"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <button>Delete Selected</button>
   </div>
-</dialog>
+</div>

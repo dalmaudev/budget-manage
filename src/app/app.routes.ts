@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { TrainingProfileComponent } from './training-profile/training-profile.component';
 
 export const routes: Routes = [
+  { path: '', component: HomeComponent },
   {
-    path: 'home',
-    component: AppComponent,
-  },
-  {
-    path: 'training-profile/:id',
+    path: 'profile/:id',
     component: TrainingProfileComponent,
+    // children: [
+    //   { path: 'edit', component: EditTrainingComponent, outlet: 'modal' },
+    // ],
   },
 ];

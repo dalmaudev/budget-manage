@@ -1,36 +1,18 @@
-.backdrop {
-  background-color: rgba(0, 0, 0, 0.9);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
-
-dialog {
-  color: black;
-  width: 90%;
-  max-width: 1200px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  border: none;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  padding: 1rem;
-  top: 5rem;
-}
-
 h2 {
   margin: 0;
   font-size: 30px;
   color: #000000;
 }
 
+strong {
+  font-weight: 500;
+}
+
 label {
   display: block;
   font-weight: bold;
   font-size: 0.85rem;
-  color: #ab9ac0;
+  color: #000000;
 }
 
 input,
@@ -40,6 +22,82 @@ textarea {
   padding: 0.15rem 0.25rem;
   border-radius: 4px;
   border: 1px solid #c5c5c5;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.employee-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  padding: 20px;
+}
+
+.custom-file-upload {
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 15px 0;
+  width: 102px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.custom-file-upload:hover {
+  background: #dfdfdf;
+}
+
+.employee-detail-container {
+  display: flex;
+
+  background: rgb(255, 255, 255);
+  width: 1200px;
+  height: auto;
+  margin: 50px auto;
+}
+
+.employee-detail-row {
+  background: rgb(255, 255, 255);
+  display: flex;
+}
+
+.employee-detail-information {
+  background: #ffffff;
+  display: flex;
+}
+
+.employee-detail-data {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.employee-detail-data-avatar,
+.employee-detail-data-budget {
+  flex: 1 1 50%;
+}
+
+.employee-detail-data-avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-detail-form {
+  margin-top: 40px;
+  width: 60%;
+}
+
+.training-profile-container {
+  max-width: fit-content;
+  margin: 40px auto;
+}
+
+.training-profile-header {
+  display: flex;
+  flex-direction: column;
 }
 
 .table-container {
@@ -56,6 +114,16 @@ textarea {
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+}
+
+.delete-search {
+  display: flex;
+}
+
+.delete-search img {
+  align-self: center;
+  margin-right: 10px;
+  fill: red;
 }
 
 #filter {
@@ -140,6 +208,27 @@ tbody td {
 
 tbody td:last-child {
   text-align: center;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.form-group label {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+.form-group input {
+  background-color: #f0f0f0; /* Color de fondo para indicar que es solo lectura */
+  pointer-events: none; /* Desactiva la interacción del ratón */
+  user-select: none; /* Desactiva la selección de texto */
+  flex: 2;
 }
 
 @media (min-width: 768px) {

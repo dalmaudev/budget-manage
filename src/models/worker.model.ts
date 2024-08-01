@@ -8,7 +8,7 @@ export interface Worker {
   contractDate: Date;
   totalBudget: number;
   currentState: string;
-  budgetSpent?: number;
-  budgetLeft?: number;
-  trainings?: Training[];
+  budgetSpent: number;
+  budgetLeft: number;
+  trainings: Training[];
 }

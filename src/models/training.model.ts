@@ -3,8 +3,11 @@ export interface Training {
   workerId: string;
   name: string;
   provider: string;
-  cost: number;
+  price: number;
   desc: string;
-  startDate?: Date;
-  finalDate?: Date;
+  startDate: Date;
+  endDate: Date;
+  type: string;
+  category: string;
+  purchaseDate: Date;
 }

@@ -23,4 +23,8 @@ export class WorkerService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     });
   }
+
+  getWorkerById(id: string): Observable<Worker> {
+    return this.http.get<Worker>(this.SERVICE_URL + `/${id}`);
+  }
 }
