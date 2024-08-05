@@ -7,8 +7,5 @@ export const routes: Routes = [
   {
     path: 'profile/:id',
     component: TrainingProfileComponent,
-    // children: [
-    //   { path: 'edit', component: EditTrainingComponent, outlet: 'modal' },
-    // ],
   },
 ];

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { switchMap, tap } from 'rxjs';
 import { Training } from '../../models/training.model';
 import { Worker } from '../../models/worker.model';
 import { EditTrainingComponent } from '../edit-training/edit-training.component';
@@ -56,7 +57,13 @@ export class TrainingProfileComponent implements OnInit {
   closeEditModal(): void {
     this.trainingService
       .getTrainingById(this.worker.id)
-      .subscribe((response) => (this.trainingDataById = response));
+      .pipe(
+        tap((response) => {
+          this.trainingDataById = response;
+        }),
+        switchMap(() => this.workerService.getWorkerById(this.worker.id))
+      )
+      .subscribe((response) => (this.worker = response));
     this.selectedTraining = undefined; // Cerrar el modal
   }
 }

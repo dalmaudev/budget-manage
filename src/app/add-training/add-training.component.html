@@ -7,7 +7,8 @@
     </h2>
     <h3>Create a new training record</h3>
   </div>
-  <form #form="ngForm" (ngSubmit)="onAddNewTraining(form)">
+  @if (profileForm) {
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmitNewTraining()">
     <p>
       <label for="name">Name</label>
       <input
@@ -16,19 +17,30 @@
         id="name"
         name="name"
         required
-        [(ngModel)]="enteredName"
+        formControlName="enteredName"
       />
+      @if (this.profileForm.controls["enteredName"].errors?.['required'] &&
+      profileForm.controls["enteredName"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }
     </p>
+
     <p>
       <label for="provider">Provider</label>
       <input
-        [(ngModel)]="enteredProvider"
+        formControlName="enteredProvider"
+        required
         type="text"
         id="provider"
         name="provider"
         required
       />
+      @if (this.profileForm.controls["enteredProvider"].errors?.['required'] &&
+      profileForm.controls["enteredProvider"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }
     </p>
+
     <p>
       <label for="price">Training Price</label>
       <input
@@ -37,12 +49,28 @@
         id="price"
         name="price"
         required
-        [(ngModel)]="enteredTrainingPrice"
+        formControlName="enteredTrainingPrice"
+        [ngClass]="
+          profileForm.controls['enteredTrainingPrice'].invalid &&
+          profileForm.controls['enteredTrainingPrice'].touched
+            ? 'errorTrainingPrice'
+            : ''
+        "
       />
-      @if (errorMessage) {
-      <span class="error-message">{{ errorMessage }}</span>
+
+      @if (profileForm.controls["enteredTrainingPrice"].errors?.['max'] &&
+      profileForm.controls["enteredTrainingPrice"].touched) {
+
+      <span class="error-message"
+        >The total training cost exceeds the allowed budget!</span
+      >
+      } @if (profileForm.controls["enteredTrainingPrice"].errors?.['required']
+      && profileForm.controls["enteredTrainingPrice"].touched) {
+
+      <span class="error-message">This field is required!</span>
       }
     </p>
+
     <p>
       <label for="type">Type</label>
       <input
@@ -51,66 +79,93 @@
         id="type"
         name="type"
         required
-        [(ngModel)]="enteredTrainingType"
+        formControlName="enteredTrainingType"
       />
     </p>
+
     <p>
       <label for="category">Category</label>
-      <select
-        [(ngModel)]="selectedTrainingCategory"
-        [ngModelOptions]="{ standalone: true }"
-      >
-        <option value="Front End" [selected]="true">Front End</option>
+      <select formControlName="selectedTrainingCategory">
+        <option value="" disabled selected>Selecciona una categoría</option>
+        <option value="Front End">Front End</option>
         <option value="Back End">Back End</option>
         <option value="Soft Skills">Soft Skills</option>
         <option value="Other">Other</option>
       </select>
     </p>
+
     <p>
       <label for="description">Description</label>
       <textarea
         required
-        [(ngModel)]="enteredTrainingDescription"
+        formControlName="enteredTrainingDescription"
         name="description"
         id="description"
         cols="30"
         rows="5"
       ></textarea>
+      @if
+      (this.profileForm.controls["enteredTrainingDescription"].errors?.['required']
+      && profileForm.controls["enteredTrainingDescription"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }@if
+      (this.profileForm.controls["enteredTrainingDescription"].errors?.['maxlength']
+      && profileForm.controls["enteredTrainingDescription"].touched ) {
+      <span class="error-message"
+        >Description too long, try to be more concise, thanks.</span
+      >
+      }
     </p>
-    <p>
-      <label for="startDate">Training Start Date</label>
-      <input
-        required
-        [(ngModel)]="enteredStartDate"
-        name="startDate"
-        id="startDate"
-        type="date"
-      />
-    </p>
-    <p>
-      <label for="endDate">Training End Date</label>
-      <input
-        required
-        [(ngModel)]="enteredEndDate"
-        name="endDate"
-        id="endDate"
-        type="date"
-      />
-    </p>
+
     <p>
       <label for="purchaseDate">Training Purchase Date</label>
       <input
         required
-        [(ngModel)]="enteredPurchaseDate"
+        formControlName="enteredPurchaseDate"
         name="purchaseDate"
         id="purchaseDate"
         type="date"
       />
+      @if (this.profileForm.controls["enteredPurchaseDate"].errors?.['required']
+      && profileForm.controls["enteredPurchaseDate"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }
+    </p>
+
+    <p>
+      <label for="startDate">Training Start Date</label>
+      <input
+        required
+        formControlName="enteredStartDate"
+        name="startDate"
+        id="startDate"
+        type="date"
+      />
+      @if (this.profileForm.controls["enteredStartDate"].errors?.['required'] &&
+      profileForm.controls["enteredStartDate"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }
+    </p>
+
+    <p>
+      <label for="endDate">Training End Date</label>
+      <input
+        required
+        formControlName="enteredEndDate"
+        name="endDate"
+        id="endDate"
+        type="date"
+      />
+      @if (this.profileForm.controls["enteredEndDate"].errors?.['required'] &&
+      profileForm.controls["enteredEndDate"].touched ) {
+      <span class="error-message">This field is required!</span>
+      }
     </p>
 
     <p class="actions">
       <button type="button" (click)="onCancel()">Cancel</button>
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <button type="submit" [disabled]="profileForm.invalid">Save</button>
     </p>
   </form>
+  }
 </dialog>

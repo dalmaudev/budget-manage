@@ -8,8 +8,8 @@
       "contractDate": "07-01-2020",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 0,
-      "budgetLeft": 1000
+      "budgetSpent": 2035,
+      "budgetLeft": -1035
     },
     {
       "id": "2",
@@ -19,8 +19,8 @@
       "contractDate": "30-10-2023",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 430,
-      "budgetLeft": 570
+      "budgetSpent": 0,
+      "budgetLeft": 1000
     },
     {
       "id": "3",
@@ -91,30 +91,17 @@
   ],
   "training": [
     {
-      "id": "9308",
-      "workerId": "2",
+      "id": "2867",
+      "workerId": "1",
       "name": "Angular pro",
-      "provider": "Codely",
-      "price": 230,
-      "desc": "The Angular Pro course is a comprehensive training program designed to help developers master the Angular framework.",
-      "startDate": "2024-08-01",
-      "endDate": "2024-08-01",
-      "type": "Online",
-      "category": "Front End",
-      "purchaseDate": "2024-08-01"
-    },
-    {
-      "id": "d392",
-      "workerId": "2",
-      "name": "Sass",
       "provider": "Udemy",
-      "price": 200,
-      "desc": "Amante de los cursos de udemy y sobre todo front end",
-      "startDate": "2024-08-01",
-      "endDate": "2024-08-01",
+      "price": 95,
+      "desc": "azsdad asd",
+      "startDate": "2024-09-04",
+      "endDate": "2024-08-30",
       "type": "Online",
       "category": "Back End",
-      "purchaseDate": "2024-08-01"
+      "purchaseDate": "2024-08-15"
     }
   ]
 }

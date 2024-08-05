@@ -1,6 +1,10 @@
 @if (selectedTraining) {
 
-<app-edit-training [training]="selectedTraining" (close)="closeEditModal()" />
+<app-edit-training
+  [training]="selectedTraining"
+  [worker]="worker"
+  (close)="closeEditModal()"
+/>
 }
 
 <div class="employee-detail">
