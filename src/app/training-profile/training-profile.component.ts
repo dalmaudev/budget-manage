@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
-import { switchMap, tap } from 'rxjs';
+import { forkJoin, switchMap, tap } from 'rxjs';
 import { Training } from '../../models/training.model';
 import { Worker } from '../../models/worker.model';
 import { EditTrainingComponent } from '../edit-training/edit-training.component';
@@ -75,10 +75,50 @@ export class TrainingProfileComponent implements OnInit {
   }
 
   toggleAll(event: Event): void {
-    console.log(this.trainingDataById);
     const isChecked = (event.target as HTMLInputElement).checked;
     this.trainingDataById.forEach(
       (training) => (training.selected = isChecked)
     );
+  }
+
+  checkboxSelected(): void {
+    const selectedTrainings = this.trainingDataById.filter((training) => {
+      console.log(this.trainingDataById);
+      training.selected;
+    });
+
+    console.log(selectedTrainings);
+  }
+
+  onCheckboxChange(trainingId: string, event: any) {
+    const training = this.trainingDataById.find((t) => t.id === trainingId);
+    if (training) {
+      training.selected = event.target.checked;
+    }
+    console.log(training);
+  }
+
+  deleteSelectedTrainings() {
+    const selectedTrainingIds = this.trainingDataById
+      .filter((training) => training.selected)
+      .map((training) => training.id);
+
+    if (selectedTrainingIds.length > 0) {
+      forkJoin(
+        selectedTrainingIds.map((id) =>
+          this.trainingService.deleteTrainingById(id!)
+        )
+      ).subscribe(
+        () => {
+          this.trainingDataById = this.trainingDataById.filter(
+            (training) => !training.selected
+          );
+          console.log('Trainings eliminados exitosamente');
+        },
+        (error) => {
+          console.error('Error eliminando trainings', error);
+        }
+      );
+    }
   }
 }

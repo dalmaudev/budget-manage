@@ -116,7 +116,7 @@
           <option value="all">Filter</option>
         </select>
         <div class="delete-search">
-          <button class="deleteTraining">
+          <button class="deleteTraining" (click)="deleteSelectedTrainings()">
             <img
               src="assets/img/delete-icon.svg"
               alt=""
@@ -146,7 +146,11 @@
           @for (training of trainingDataById; track training.id) {
           <tr>
             <td>
-              <input type="checkbox" [(ngModel)]="training.selected" />
+              <input
+                type="checkbox"
+                [checked]="training.selected"
+                (change)="onCheckboxChange(training.id!, $event)"
+              />
             </td>
 
             <td>{{ training.name }}</td>

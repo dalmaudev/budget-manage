@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Training } from '../../models/training.model';
 import { APP_CONSTANTS } from '../constants/constants';
 
@@ -36,5 +36,13 @@ export class TrainingService {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       }
     );
+  }
+
+  deleteTrainingById(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.SERVICE_URL}/${id}`);
+  }
+
+  deleteTrainingsByIds(ids: string[]): Observable<void[]> {
+    return forkJoin(ids.map((id) => this.deleteTrainingById(id)));
   }
 }
