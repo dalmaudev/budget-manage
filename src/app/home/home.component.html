@@ -110,15 +110,18 @@
         </td>
 
         <td class="table-actions">
-          <a href="#" (click)="onAddNewTraining(worker)">
+          <button
+            (click)="onAddNewTraining(worker)"
+            [disabled]="worker.currentState === 'Inactive'"
+          >
             <img
               src="assets/img/add-new-training.svg"
               alt="New Training"
               width="32"
               height="32"
             />
-          </a>
-          <a
+          </button>
+          <button
             [routerLink]="['/profile', worker.id]"
             (click)="onJoinTrainingById(worker)"
           >
@@ -128,7 +131,7 @@
               width="32"
               height="32"
             />
-          </a>
+          </button>
         </td>
       </tr>
       }

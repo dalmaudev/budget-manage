@@ -8,8 +8,8 @@
       "contractDate": "07-01-2020",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 2035,
-      "budgetLeft": -1035
+      "budgetSpent": 600,
+      "budgetLeft": 400
     },
     {
       "id": "2",
@@ -91,17 +91,30 @@
   ],
   "training": [
     {
-      "id": "2867",
+      "id": "3146",
       "workerId": "1",
       "name": "Angular pro",
       "provider": "Udemy",
-      "price": 95,
-      "desc": "azsdad asd",
-      "startDate": "2024-09-04",
-      "endDate": "2024-08-30",
+      "price": 100,
+      "desc": "asd asdsa d",
+      "startDate": "2024-08-13",
+      "endDate": "2024-08-19",
       "type": "Online",
-      "category": "Back End",
-      "purchaseDate": "2024-08-15"
+      "category": "Front End",
+      "purchaseDate": "2024-08-06"
+    },
+    {
+      "id": "3865",
+      "workerId": "1",
+      "name": "Clean Code",
+      "provider": "Anaya",
+      "price": 500,
+      "desc": "clean code book good practices",
+      "startDate": "2024-08-10",
+      "endDate": "2024-08-18",
+      "type": "Book",
+      "category": "Other",
+      "purchaseDate": "2024-08-09"
     }
   ]
 }

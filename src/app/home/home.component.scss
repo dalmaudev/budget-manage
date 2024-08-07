@@ -157,3 +157,17 @@ tbody td:last-child {
   gap: 10px;
   justify-content: center;
 }
+
+.table-actions button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #cccccc6d;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.table-actions button:disabled {
+  border: 1px solid #ff000038;
+  cursor: not-allowed;
+}

@@ -116,12 +116,14 @@
           <option value="all">Filter</option>
         </select>
         <div class="delete-search">
-          <img
-            src="assets/img/delete-icon.svg"
-            alt=""
-            width="32"
-            height="32"
-          /><input type="text" id="search" placeholder="Search..." />
+          <button class="deleteTraining">
+            <img
+              src="assets/img/delete-icon.svg"
+              alt=""
+              width="32"
+              height="32"
+            /></button
+          ><input type="text" id="search" placeholder="Search..." />
         </div>
       </div>
     </div>
@@ -129,7 +131,7 @@
       <table>
         <thead>
           <tr>
-            <th><input type="checkbox" /></th>
+            <th><input type="checkbox" (click)="toggleAll($event)" /></th>
             <th>Training Name</th>
             <th>Progress</th>
             <th>Training Price</th>
@@ -144,7 +146,7 @@
           @for (training of trainingDataById; track training.id) {
           <tr>
             <td>
-              <input type="checkbox" />
+              <input type="checkbox" [(ngModel)]="training.selected" />
             </td>
 
             <td>{{ training.name }}</td>

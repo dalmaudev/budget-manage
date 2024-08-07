@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
 import { Training } from '../../models/training.model';
@@ -10,7 +11,7 @@ import { WorkerService } from '../services/worker.service';
 @Component({
   selector: 'app-training-profile',
   standalone: true,
-  imports: [EditTrainingComponent, RouterLink, RouterOutlet],
+  imports: [EditTrainingComponent, RouterLink, RouterOutlet, FormsModule],
   templateUrl: './training-profile.component.html',
   styleUrl: './training-profile.component.scss',
 })
@@ -40,7 +41,10 @@ export class TrainingProfileComponent implements OnInit {
 
   getTrainingsByWorkerId(id: string): void {
     this.trainingService.getTrainingById(id).subscribe((response) => {
-      this.trainingDataById = response;
+      this.trainingDataById = response.map((training) => ({
+        ...training,
+        selected: false, // Initialize the selected property
+      }));
     });
   }
 
@@ -59,11 +63,22 @@ export class TrainingProfileComponent implements OnInit {
       .getTrainingById(this.worker.id)
       .pipe(
         tap((response) => {
-          this.trainingDataById = response;
+          this.trainingDataById = response.map((training) => ({
+            ...training,
+            selected: false, // Initialize the selected property
+          }));
         }),
         switchMap(() => this.workerService.getWorkerById(this.worker.id))
       )
       .subscribe((response) => (this.worker = response));
-    this.selectedTraining = undefined; // Cerrar el modal
+    this.selectedTraining = undefined; // Close the modal
+  }
+
+  toggleAll(event: Event): void {
+    console.log(this.trainingDataById);
+    const isChecked = (event.target as HTMLInputElement).checked;
+    this.trainingDataById.forEach(
+      (training) => (training.selected = isChecked)
+    );
   }
 }

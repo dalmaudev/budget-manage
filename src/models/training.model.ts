@@ -10,4 +10,5 @@ export interface Training {
   type?: string;
   category?: string;
   purchaseDate?: Date;
+  selected?: boolean;
 }
