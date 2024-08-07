@@ -1,4 +1,4 @@
-<div class="backdrop" (click)="onCancel()"></div>
+<div class="backdrop" (click)="closeModal()"></div>
 <dialog open>
   <h2>Edit Training</h2>
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
@@ -98,7 +98,7 @@
     </p>
 
     <div class="actions">
-      <button type="button" (click)="onCancel()">Cancel</button>
+      <button type="button" (click)="closeModal()">Cancel</button>
       <button type="submit" [disabled]="!form.valid">Save</button>
     </div>
     @if (errorMessage) {
