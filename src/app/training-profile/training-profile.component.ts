@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { forkJoin, switchMap, tap } from 'rxjs';
 import { Training } from '../../models/training.model';
 import { Worker } from '../../models/worker.model';
+import { AddTrainingComponent } from '../add-training/add-training.component';
 import { EditTrainingComponent } from '../edit-training/edit-training.component';
 import { TrainingService } from '../services/training.service';
 import { WorkerService } from '../services/worker.service';
@@ -11,15 +12,23 @@ import { WorkerService } from '../services/worker.service';
 @Component({
   selector: 'app-training-profile',
   standalone: true,
-  imports: [EditTrainingComponent, RouterLink, RouterOutlet, FormsModule],
+  imports: [
+    EditTrainingComponent,
+    RouterLink,
+    RouterOutlet,
+    FormsModule,
+    AddTrainingComponent,
+  ],
   templateUrl: './training-profile.component.html',
   styleUrl: './training-profile.component.scss',
 })
 export class TrainingProfileComponent implements OnInit {
   @Input({ required: true }) worker!: Worker;
+  @Input() workerSelected!: Worker;
   @Output() cancel = new EventEmitter<void>();
 
   isEditingTraining = false;
+  isAddingNewTraining = false;
   trainingDataById!: Training[];
   selectedTraining?: Training;
 
@@ -110,6 +119,27 @@ export class TrainingProfileComponent implements OnInit {
         )
       ).subscribe(
         () => {
+          // Actualizar los presupuestos del worker
+          this.trainingDataById
+            .filter((training) => training.selected)
+            .forEach((training) => {
+              this.worker.budgetSpent -= training.price!;
+              this.worker.budgetLeft += training.price!;
+            });
+
+          // Actualizar el worker en el servicio
+          this.workerService
+            .updateWorker(this.worker.id, this.worker)
+            .subscribe(
+              () => {
+                console.log('Worker actualizado exitosamente');
+              },
+              (error) => {
+                console.error('Error actualizando el worker', error);
+              }
+            );
+
+          // Filtrar los trainings eliminados
           this.trainingDataById = this.trainingDataById.filter(
             (training) => !training.selected
           );
@@ -120,5 +150,19 @@ export class TrainingProfileComponent implements OnInit {
         }
       );
     }
+  }
+
+  onCancelAddNewTraining() {
+    this.isAddingNewTraining = false;
+  }
+
+  onCreatedTraining() {
+    this.isAddingNewTraining = false;
+    this.getTrainingsByWorkerId(this.worker.id);
+  }
+
+  openAddTrainingModal(worker: Worker) {
+    this.workerSelected = worker;
+    this.isAddingNewTraining = true;
   }
 }

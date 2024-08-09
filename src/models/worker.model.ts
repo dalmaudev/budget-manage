@@ -11,4 +11,5 @@ export interface Worker {
   budgetSpent: number;
   budgetLeft: number;
   trainings: Training[];
+  budgetRenew?: Date;
 }

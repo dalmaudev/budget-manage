@@ -5,8 +5,13 @@
   [worker]="worker"
   (close)="closeEditModal()"
 />
+} @if (isAddingNewTraining) {
+<app-add-training
+  (cancel)="onCancelAddNewTraining()"
+  (onFinish)="onCreatedTraining()"
+  [worker]="workerSelected"
+/>
 }
-
 <div class="employee-detail">
   @if (worker) {
   <div class="breadcrumb">
@@ -119,6 +124,16 @@
           <button class="deleteTraining" (click)="deleteSelectedTrainings()">
             <img
               src="assets/img/delete-icon.svg"
+              alt=""
+              width="32"
+              height="32"
+            /></button
+          ><button
+            class="deleteTraining"
+            (click)="openAddTrainingModal(worker)"
+          >
+            <img
+              src="assets/img/add-new-training.svg"
               alt=""
               width="32"
               height="32"
