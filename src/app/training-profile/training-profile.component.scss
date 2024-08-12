@@ -28,6 +28,14 @@ input[type="file"] {
   display: none;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.strong {
+  font-weight: 500;
+}
+
 .employee-detail {
   max-width: 1200px;
   margin: 0 auto;

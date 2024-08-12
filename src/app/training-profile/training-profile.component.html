@@ -158,7 +158,19 @@
           </tr>
         </thead>
         <tbody>
-          @for (training of trainingDataById; track training.id) {
+          @if (trainingDataById.length === 0) {
+          <tr>
+            <td colspan="9">
+              No existe ningún training,
+              <span
+                class="pointer strong"
+                (click)="openAddTrainingModal(worker)"
+                >crea uno aquí mismo.</span
+              >
+            </td>
+          </tr>
+          }@else { @for (training of trainingDataById; track training.id) {
+
           <tr>
             <td>
               <input
@@ -187,7 +199,7 @@
               </a>
             </td>
           </tr>
-          }
+          } }
         </tbody>
       </table>
     </div>
