@@ -14,6 +14,7 @@
 }
 <div class="employee-detail">
   @if (worker) {
+
   <div class="breadcrumb">
     <a [routerLink]="'/'">Home</a> > {{ worker.name }} {{ worker.surname }} >
     Detailed View
@@ -76,16 +77,17 @@
                   type="text"
                   id="hiring-date"
                   name="hiring-date"
-                  [value]="worker.contractDate"
+                  value="{{ worker.contractDate | date : 'dd-MM-yyyy' }}"
                 />
               </div>
               <div class="form-group">
                 <label for="budget-renewal">Budget renewal:</label>
                 <input
                   readonly
-                  type="number"
+                  type="text"
                   id="budget-renewal"
                   name="budget-renewal"
+                  value="{{ worker.budgetRenewal | date : 'dd-MM-yyyy' }}"
                 />
               </div>
               <div class="form-group">

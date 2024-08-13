@@ -1,4 +1,4 @@
-import { NgClass, UpperCasePipe } from '@angular/common';
+import { DatePipe, NgClass, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Worker } from '../../models/worker.model';
@@ -16,11 +16,13 @@ import { TrainingProfileComponent } from '../training-profile/training-profile.c
     AddTrainingComponent,
     NgClass,
     TrainingProfileComponent,
+    DatePipe,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
+  workers: Worker[] = [];
   dataWorker!: Worker[];
   isAddingNewTraining = false;
   isJoiningTrainingProfile = false;

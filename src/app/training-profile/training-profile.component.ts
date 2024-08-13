@@ -1,9 +1,10 @@
+import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { forkJoin, switchMap, tap } from 'rxjs';
 import { Training } from '../../models/training.model';
-import { Worker } from '../../models/worker.model';
+import { Worker, calculateBudgetRenew } from '../../models/worker.model';
 import { AddTrainingComponent } from '../add-training/add-training.component';
 import { EditTrainingComponent } from '../edit-training/edit-training.component';
 import { TrainingService } from '../services/training.service';
@@ -18,6 +19,7 @@ import { WorkerService } from '../services/worker.service';
     RouterOutlet,
     FormsModule,
     AddTrainingComponent,
+    DatePipe,
   ],
   templateUrl: './training-profile.component.html',
   styleUrl: './training-profile.component.scss',
@@ -59,6 +61,7 @@ export class TrainingProfileComponent implements OnInit {
 
   getWorkerById(id: string): void {
     this.workerService.getWorkerById(id).subscribe((worker) => {
+      worker.budgetRenewal = calculateBudgetRenew(worker.contractDate);
       this.worker = worker;
     });
   }
@@ -113,6 +116,16 @@ export class TrainingProfileComponent implements OnInit {
       .map((training) => training.id);
 
     if (selectedTrainingIds.length > 0) {
+      const confirmDelete = confirm(
+        `¿Está seguro que desea eliminar este registro?
+          Esta acción es irreversible
+        `
+      );
+
+      if (!confirmDelete) {
+        return; // Si el usuario cancela, no se realiza ninguna acción
+      }
+
       forkJoin(
         selectedTrainingIds.map((id) =>
           this.trainingService.deleteTrainingById(id!)

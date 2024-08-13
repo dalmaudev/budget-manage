@@ -96,7 +96,7 @@
         <td>{{ worker.name | uppercase }}</td>
         <td>{{ worker.surname | uppercase }}</td>
         <td>{{ worker.job }}</td>
-        <td>{{ worker.contractDate }}</td>
+        <td>{{ worker.contractDate | date : "dd-MM-yyyy" }}</td>
         <td>{{ worker.totalBudget }}€</td>
         <td>{{ worker.budgetSpent }}€</td>
         <td>{{ worker.budgetLeft }}€</td>

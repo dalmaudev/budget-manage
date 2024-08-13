@@ -8,6 +8,7 @@
       "contractDate": "07-01-2020",
       "totalBudget": 1000,
       "currentState": "Active",
+      "budgetRenewal": "07-01-2021",
       "budgetSpent": 120,
       "budgetLeft": 880
     },
@@ -16,9 +17,10 @@
       "name": "Luca",
       "surname": "Abdollahi",
       "job": " Sr Developer",
-      "contractDate": "30-10-2023",
+      "contractDate": "01-01-2023",
       "totalBudget": 1000,
       "currentState": "Active",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -27,9 +29,10 @@
       "name": "Daniel",
       "surname": "Peiro",
       "job": " Sr Developer",
-      "contractDate": "20-07-2021",
+      "contractDate": "10-20-2021",
       "totalBudget": 1000,
       "currentState": "Active",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -38,9 +41,10 @@
       "name": "Danitza",
       "surname": "Oduber",
       "job": " RRHH",
-      "contractDate": "31-10-2019",
+      "contractDate": "12-10-2019",
       "totalBudget": 1000,
       "currentState": "Active",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -52,6 +56,7 @@
       "contractDate": "01-10-2024",
       "totalBudget": 1000,
       "currentState": "Inactive",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -63,6 +68,7 @@
       "contractDate": "05-04-2020",
       "totalBudget": 1000,
       "currentState": "Inactive",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -71,9 +77,10 @@
       "name": "Esther",
       "surname": "Lopez",
       "job": "UI/UX",
-      "contractDate": "31-01-2021",
+      "contractDate": "01-01-2021",
       "totalBudget": 1000,
       "currentState": "Inactive",
+      "budgetRenewal": "",
       "budgetSpent": 0,
       "budgetLeft": 1000
     },
@@ -85,8 +92,9 @@
       "contractDate": "01-01-2022",
       "totalBudget": 1000,
       "currentState": "Active",
-      "budgetSpent": 200,
-      "budgetLeft": 800
+      "budgetRenewal": "2024-12-31T23:00:00.000Z",
+      "budgetSpent": 500,
+      "budgetLeft": 500
     }
   ],
   "training": [
@@ -115,6 +123,19 @@
       "type": "Book",
       "category": "Other",
       "purchaseDate": "2024-08-12"
+    },
+    {
+      "id": "4cae",
+      "workerId": "8",
+      "name": "Clean Code",
+      "provider": "Anaya",
+      "price": 300,
+      "desc": "asd asd ",
+      "startDate": "2024-09-03",
+      "endDate": "2024-09-03",
+      "type": "Book",
+      "category": "Back End",
+      "purchaseDate": "2024-08-14"
     }
   ]
 }
